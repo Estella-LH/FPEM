@@ -1,7 +1,7 @@
 <div align="center">
 <h3>FPEM: Face Prior Enhanced Facial Attractiveness Prediction for Live Videos with Face Retouching [ICCV 2025]</h3>
 Hui Li, Xiaoyu Ren, Hongjiu Yu, Ying Chen*, Kai Li, L Wang, Xiongkuo Min, Huiyu Duan, Guangtao Zhai, Xu Liu
-<img src="./assets/model0305.png" width="100%" height="100%">
+<img src="./assets/model0305.png" width="80%" height="80%">
 </div>
 
 ## TODO
@@ -11,7 +11,7 @@ Hui Li, Xiaoyu Ren, Hongjiu Yu, Ying Chen*, Kai Li, L Wang, Xiongkuo Min, Huiyu 
 ## Dataset Statistics
 - **Examples of the face images in our LiveBeauty dataset.**
 <p align="center">
-    <img src="./assets/faces.png" width="96%" height="50%">
+    <img src="./assets/faces.png" width="80%" height="40%">
 </p>
 
 ## Experimental Results
