@@ -4,6 +4,13 @@ Hui Li, Xiaoyu Ren, Hongjiu Yu, Ying Chen*, Kai Li, L Wang, Xiongkuo Min, Huiyu 
 <img src="./assets/model0305.png" width="80%" height="80%">
 </div>
 
+## News
+* **[2025-11-03]** The FPEM model is released.
+* **[2025-11-03]** The paper is released on [ICCV2025](https://openaccess.thecvf.com/content/ICCV2025/html/Li_FPEM_Face_Prior_Enhanced_Facial_Attractiveness_Prediction_for_Live_Videos_ICCV_2025_paper.html)🔥.
+
+## TODO
+- [X] Release the FPEM model.
+- [ ] Release the dataset.
 
 ## Dataset Statistics
 - **Examples of the face images in our LiveBeauty dataset.**
@@ -11,7 +18,7 @@ Hui Li, Xiaoyu Ren, Hongjiu Yu, Ying Chen*, Kai Li, L Wang, Xiongkuo Min, Huiyu 
     <img src="./assets/faces.png" width="80%" height="40%">
 </p>
 
-We provide two version of LiveBeauty dataset, you can download them from [here](dataset link of tianchi).
+We provide two version of LiveBeauty dataset, you can download them from [here](TBD).
 One version is the same dataset as the one in the paper denoted as LiveBeauty-essay, the other is a complete-face-version denoted as LiveBeauty-public.
 The complete-face-version contains complete face images and the corresponding original frames of the live videos.
 
