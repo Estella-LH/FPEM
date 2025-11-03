@@ -1,0 +1,69 @@
+
+dataset:
+  type: dataloader.dataset.FaceDataset
+  resize_size: [112, 160]
+  # resize_size: [224]
+  # score_key_list: ['mos_clean']
+  score_key_list: ['clean_mean_score']
+  metric_list: ['srcc', 'plcc', 'krcc', 'mae', 'rmse']
+  train:
+    images_dir_list:
+      - /mnt/liyun/code/Essay/FPEM-release/data/LiveBeauty_public/cropped_faces
+    meta_file_list:
+      - /mnt/liyun/code/Essay/FPEM-release/data/LiveBeauty_public/train.csv
+    batch_size: 32
+    workers: 4
+    data_balance: false
+
+  test:
+    images_dir_list:
+      - /mnt/liyun/code/Essay/FPEM-release/data/LiveBeauty_public/cropped_faces
+    meta_file_list:
+      - /mnt/liyun/code/Essay/FPEM-release/data/LiveBeauty_public/test.csv
+    batch_size: 32
+
+trainer:
+  gpu_id: 0
+  max_epoch: 50
+  optimizer:
+    type: AdamW
+    kwargs:
+      lr: 5.0e-4
+    groups:
+      # write config of the submodule you want to train with different lr or frozen
+      # the submodule not mentioned will be trained with default_lr in kwargs
+      - name: pre_feature
+        trainable: false
+      - name: backbone
+        lr: 2.0e-5
+        trainable: true
+      
+
+  lr_scheduler:
+    type: LambdaLR
+    kwargs:
+      warmup_epoch: 10
+      max_epoch: 50
+
+saver:
+  pretrain_model:
+    - /mnt/liyun/code/Essay/FPEM-release/pretrained/facenet_20180402_vggface2.pth
+    - /mnt/liyun/code/Essay/FPEM-release/pretrained/swinface_step_79999.pth
+  val_epoch: 2
+  save_epoch: 2
+  display_interval: 100
+  summary_interval: 20
+  plot_scatter: true
+
+net:
+  - name: SwinGFVQA_ca
+    type: nets.VQA.SwinGFVQA_ca
+    kwargs: 
+      num_score: 1
+      embed_dim: 512
+      mlp_dim: 64
+
+loss:
+    type: torch.nn.L1Loss
+    kwargs:
+      {}

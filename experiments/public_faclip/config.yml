@@ -1,0 +1,59 @@
+
+dataset:
+  name: LiveBeauty
+  #name: SCUT
+  # name: MEBeauty
+  type: dataloader.dataset.FaceDataset
+  resize_size: [224, 112, 160]
+  score_key_list: ['clean_mean_score']
+  metric_list: ['srcc', 'plcc', 'krcc', 'mse']
+  train:
+    images_dir_list:
+      - /mnt/liyun/code/Essay/FPEM-release/data/LiveBeauty_public/cropped_faces
+    meta_file_list:
+      - /mnt/liyun/code/Essay/FPEM-release/data/LiveBeauty_public/train.csv
+    batch_size: 16
+    workers: 4
+    data_balance: false
+
+  test:
+    images_dir_list:
+      - /mnt/liyun/code/Essay/FPEM-release/data/LiveBeauty_public/cropped_faces
+    meta_file_list:
+      - /mnt/liyun/code/Essay/FPEM-release/data/LiveBeauty_public/test.csv
+    batch_size: 32
+    # pad_mode: 'surround'
+
+trainer:
+  gpu_id: 0
+  max_epoch: 10
+  # clip freeze option 
+  # 0: not freeze 1: freeze text encoder 2: freeze image encoder 3: freeze both
+  optimizer:
+    type: nets.Optim.PreciseAdjustAdamW
+    kwargs:
+      lr: 5.0e-6
+      weight_decay: 0.001
+
+  lr_scheduler:
+    type: CosineAnnealingLR
+    kwargs:
+      T_max: 5
+
+saver:
+  val_epoch: 1
+  save_epoch: 1
+  display_interval: 100
+  summary_interval: 20
+  plot_scatter: true
+
+net:
+  - name: FACLIP
+    type: nets.Clips.FACLIP
+    kwargs: 
+      {}
+
+loss:
+    type: nets.Loss.FaClipLoss
+    kwargs:
+      {}
