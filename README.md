@@ -10,7 +10,7 @@ Hui Li, Xiaoyu Ren, Hongjiu Yu, Ying Chen*, Kai Li, L Wang, Xiongkuo Min, Huiyu 
 
 ## TODO
 - [X] Release the FPEM model.
-- [ ] Release the dataset.
+- [X] Release the dataset.
 
 ## Dataset Statistics
 - **Examples of the face images in our LiveBeauty dataset.**
@@ -18,7 +18,7 @@ Hui Li, Xiaoyu Ren, Hongjiu Yu, Ying Chen*, Kai Li, L Wang, Xiongkuo Min, Huiyu 
     <img src="./assets/faces.png" width="80%" height="40%">
 </p>
 
-We provide two version of LiveBeauty dataset, you can download them from [here](TBD).
+We provide two version of LiveBeauty dataset, you can download them from [https://tianchi.aliyun.com/dataset/216302].
 One version is the same dataset as the one in the paper denoted as LiveBeauty-essay, the other is a complete-face-version denoted as LiveBeauty-public.
 The complete-face-version contains complete face images and the corresponding original frames of the live videos.
 
