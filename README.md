@@ -7,7 +7,8 @@ Hui Li, Xiaoyu Ren, Hongjiu Yu, Ying Chen*, Kai Li, L Wang, Xiongkuo Min, Huiyu 
 ## News
 * **[2025-11-03]** The FPEM model is released.
 * **[2025-11-03]** The paper is released on [ICCV2025](https://openaccess.thecvf.com/content/ICCV2025/html/Li_FPEM_Face_Prior_Enhanced_Facial_Attractiveness_Prediction_for_Live_Videos_ICCV_2025_paper.html)🔥.
-
+* **[2025-12-10]** The LiveBeauty dataset is released.
+  
 ## TODO
 - [X] Release the FPEM model.
 - [X] Release the dataset.
